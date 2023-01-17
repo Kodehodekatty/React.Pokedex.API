@@ -1,5 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/65780863e7302fe257df982341d6a1cb?family=PKMN+RBYGSC);
 
+
+
 .wrapper {
 
     width: 1100px;
@@ -39,10 +41,10 @@
 
 .box {
 
-    font-family: "PKMN RBYGSC";
+
     display: inline-block;
     min-height: fit-content;
-
+    font-family: "PKMN RBYGSC";
     min-height: fit-content;
     margin: 0;
     padding-left: 5%;
@@ -62,6 +64,83 @@
     background-color: rgb(191, 238, 252);
 }
 
+img:hover {
+    scale: 80%;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+img:active {
+
+
+    animation: bounce-top 0.9s both;
+
+}
+
+
+
+@keyframes bounce-top {
+    0% {
+
+        transform: translateY(-45px);
+
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+
+        transform: translateY(-24px);
+
+        animation-timing-function: ease-in;
+    }
+
+    65% {
+
+        transform: translateY(-12px);
+
+        animation-timing-function: ease-in;
+    }
+
+    82% {
+
+        transform: translateY(-6px);
+
+        animation-timing-function: ease-in;
+    }
+
+    93% {
+
+        transform: translateY(-4px);
+
+        animation-timing-function: ease-in;
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+
+        transform: translateY(0px);
+
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+
+        transform: translateY(0px);
+
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+}
+
+
+
 .box p {
     margin-top: 10px;
     margin: 10px auto;
@@ -69,18 +148,22 @@
     height: 20px;
     background-color: rgb(255, 253, 110);
     border-radius: 20px;
+    font-family: "PKMN RBYGSC";
+    font-size: 0.8em;
 
 
 }
 
 .box h1 {
     margin: 10px;
+    font-family: "PKMN RBYGSC";
 }
 
 .idTag {
 
     font-size: 0.9em;
     color: darkblue;
+
 }
 
 .spriteImages {
