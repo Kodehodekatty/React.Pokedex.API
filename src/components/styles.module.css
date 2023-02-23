@@ -8,15 +8,18 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 120vh;
     height: 80%;
     padding: 10px;
     margin-right: 10px;
-    background-color: #d9005a;
+    background-image: url("/src/basic-red-pokeball-bwdp5mcaly84lo1u.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
     box-shadow: 0 10px 2px 0 rgba(0, 0, 0, 0.16);
 
     overflow: scroll;
     overflow-x: hidden;
+
 
 
 }
@@ -54,7 +57,9 @@
     background-color: #FFF;
     background-repeat: no-repeat;
     border: none;
+    text-align: center;
 
+    font-family: "PKMN RBYGSC";
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
 
 
@@ -78,7 +83,7 @@
 }
 
 .box:hover {
-    animation: bounce-top 4s both;
+    animation: bounce-top 900ms both;
     box-shadow: 2px 10px 0 rgba(0, 0, 0, 0.16);
     background-color: rgb(255, 246, 168);
 
@@ -94,8 +99,12 @@ img:hover {
     cursor: pointer;
 }
 
-img:active {}
+.spritebigImage {
+    width: 40%;
+    background-color: #ffffff;
+    border-radius: 50%;
 
+}
 
 
 @keyframes bounce-top {
@@ -168,6 +177,7 @@ img:active {}
     font-size: 0.8em;
 
 
+
 }
 
 .box h1 {
@@ -183,7 +193,7 @@ img:active {}
     border-bottom: 2px solid rgba(181, 181, 181, 0.571);
     border-radius: 0%;
     text-align: center;
-    margin: 0;
+    margin: 4%;
 
 }
 
@@ -209,4 +219,9 @@ img:active {}
     flex-wrap: nowrap;
     align-content: space-between;
     align-items: stretch;
+}
+
+.number {
+
+    font-size: smaller;
 }

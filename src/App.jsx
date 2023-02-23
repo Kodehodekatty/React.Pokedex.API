@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import "./App.css";
 import React from "react";
 import PokeCard from "./components/PokeCard";
-import CloserView from "./components/CloserView";
+
 import styles from "./components/styles.module.css";
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
 
   const [pokemonList, setListPokemon] = useState();
 
-  const [show, setShow] = React.useState(true);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     async function getData() {
@@ -35,10 +35,11 @@ export default function App() {
     <div className={styles.pokecontainer}>
       <div className={styles.wrapper}>
         {pokemonList.map((item, index) => {
-          return <PokeCard item={item} key={index} />;
+          return (
+            <PokeCard item={item} key={index} setShow={setShow} show={show} />
+          );
         })}
       </div>
-      {/* <CloserView item={item} /> */}
     </div>
   );
 }
