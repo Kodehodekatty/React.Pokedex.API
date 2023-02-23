@@ -4,85 +4,104 @@
 
 .wrapper {
 
-    width: 1100px;
-    height: 500px;
-    margin: 50px 60px auto;
-    overflow-y: scroll;
-    border: 10px solid rgb(156, 156, 255);
-    border-radius: 20px;
-    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #d9005a;
+    box-shadow: 0 10px 2px 0 rgba(0, 0, 0, 0.16);
+
+    overflow: scroll;
+    overflow-x: hidden;
 
 
+}
+
+.wrapper::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
 }
 
 .wrapper::-webkit-scrollbar {
-
     width: 10px;
-
-    background-color: rgb(0, 23, 156);
-    border-radius: 10px;
-    cursor: pointer;
-
-    outline: 2px solid rgb(0, 0, 0);
-
-
+    background-color: #F5F5F5;
+    cursor: grab;
 }
-
-
 
 .wrapper::-webkit-scrollbar-thumb {
-    background: rgb(255, 230, 0);
-    border-radius: 20px;
-    cursor: pointer;
-    outline: 2px solid rgb(0, 0, 0);
-
+    background-color: #ffe100;
+    width: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: move;
 
 }
+
+
+
 
 .box {
 
+    border: 1px solid black;
 
-    display: inline-block;
-    min-height: fit-content;
-    font-family: "PKMN RBYGSC";
-    min-height: fit-content;
-    margin: 0;
-    padding-left: 5%;
-    margin-top: 20px;
-    margin-left: 10px;
-    image-rendering: pixelated;
-    text-align: center;
-    font-size: 10px;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    border: none;
+
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+
+
+}
+
+.card {}
+
+.mainbox {
+    display: flex;
+    width: 100%;
+
 
 
 }
 
 .box img {
-    border-radius: 15px;
-    border: black solid 5px;
+
+
     margin: 0 auto;
-    background-color: rgb(191, 238, 252);
+
+}
+
+.box:hover {
+    animation: bounce-top 4s both;
+    box-shadow: 2px 10px 0 rgba(0, 0, 0, 0.16);
+    background-color: rgb(255, 246, 168);
+
+
+
 }
 
 img:hover {
-    scale: 80%;
-    background-color: whitesmoke;
+
+
+
+    border-radius: 0%;
     cursor: pointer;
 }
 
-img:active {
-
-
-    animation: bounce-top 0.9s both;
-
-}
+img:active {}
 
 
 
 @keyframes bounce-top {
     0% {
 
-        transform: translateY(-45px);
+        transform: translateY(-5px);
 
         animation-timing-function: ease-in;
         opacity: 1;
@@ -142,12 +161,9 @@ img:active {
 
 
 .box p {
-    margin-top: 10px;
-    margin: 10px auto;
-    width: 50px;
-    height: 20px;
+
     background-color: rgb(255, 253, 110);
-    border-radius: 20px;
+
     font-family: "PKMN RBYGSC";
     font-size: 0.8em;
 
@@ -155,20 +171,42 @@ img:active {
 }
 
 .box h1 {
-    margin: 10px;
+
     font-family: "PKMN RBYGSC";
 }
 
 .idTag {
 
-    font-size: 0.9em;
+    font-size: 0.6em;
     color: darkblue;
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(181, 181, 181, 0.571);
+    border-radius: 0%;
+    text-align: center;
+    margin: 0;
 
 }
 
 .spriteImages {
+    width: 10vw;
+    height: 20vh;
+    margin: 0 auto;
+    image-rendering: pixelated;
+
+    border-radius: 5px;
+    color: #585858;
+}
+
+.pokecontainer {
 
 
-    width: 30vh;
-    height: 30vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+
+    flex-wrap: nowrap;
+    align-content: space-between;
+    align-items: stretch;
 }

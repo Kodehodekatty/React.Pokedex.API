@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
-
+import React from "react";
 import PokeCard from "./components/PokeCard";
-
+import CloserView from "./components/CloserView";
 import styles from "./components/styles.module.css";
 
 export default function App() {
@@ -13,10 +13,11 @@ export default function App() {
 
   const [pokemonList, setListPokemon] = useState();
 
+  const [show, setShow] = React.useState(true);
+
   useEffect(() => {
     async function getData() {
       let listOfPokemonUrls = await fetch(fetchUrl).then((res) => res.json());
-
       setListPokemon(
         await Promise.all(
           listOfPokemonUrls.results.map((item) =>
@@ -31,10 +32,13 @@ export default function App() {
   if (!pokemonList || pokemonList.length == 0) return <p>loading</p>;
 
   return (
-    <div className={styles.wrapper}>
-      {pokemonList.map((item, index) => {
-        return <PokeCard item={item} key={index} />;
-      })}
+    <div className={styles.pokecontainer}>
+      <div className={styles.wrapper}>
+        {pokemonList.map((item, index) => {
+          return <PokeCard item={item} key={index} />;
+        })}
+      </div>
+      {/* <CloserView item={item} /> */}
     </div>
   );
 }
