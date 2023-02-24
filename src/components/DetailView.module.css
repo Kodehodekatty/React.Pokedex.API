@@ -1,59 +1,41 @@
 .closerview {
+    box-sizing: border-box;
+    min-width: 400px;
+    height: 100%;
+    padding: 40px;
+    flex-grow: 1;
 
-    width: 40%;
-    height: 80%;
-    padding: 10px;
-    bottom: 0;
-    right: 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 30px;
     background-color: #df095e;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    position: absolute;
+
 }
 
+.closerview img {
+    background-color: #585858;
+    border-radius: 30px;
+    border: white 15px solid;
+    image-rendering: pixelated;
+}
 
 .datawrapper {
-    width: 80%;
-    height: fit-content;
-    padding: 13px;
-    top: 0;
-    left: 0;
-    background-color: rgb(208, 208, 208);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid yellow;
 
+    height: 110px;
+    padding: 20px;
+    color: white;
+
+    background-color: #585858;
+    border-radius: 30px;
 }
 
 
-.datawrapper>h1 {
-
-    background-color: white;
-    border-radius: 10px;
-    width: 50vh;
-    font-family: "PKMN RBYGSC";
-    text-align: center;
-}
-
-.datawrapper>p {
-
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.653);
-    width: 30vh;
-    text-align: center;
-    border-radius: 20px;
-    font-family: "PKMN RBYGSC";
-
-}
 
 .dataname {
     margin: 0 0 5px;
+    text-transform: capitalize;
 }
 
 .datachar {

@@ -3,6 +3,9 @@ import React from "react";
 import styling from "./DetailView.module.css";
 
 export default function CloserView({ item }) {
+  if (!item || item == {})
+    return <section className={styling.closerview}></section>;
+
   return (
     <section className={styling.closerview}>
       <img src={item.sprites.front_default} className={styling.spriteimage} />
