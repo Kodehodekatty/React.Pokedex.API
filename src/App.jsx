@@ -4,6 +4,7 @@ import "./App.css";
 import React from "react";
 import PokeCard from "./components/PokeCard";
 import CloserView from "./components/CloserView";
+import pokemonbackground from "../src/videoplayback.mp4";
 
 import styles from "./components/styles.module.css";
 

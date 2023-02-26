@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     justify-content: stretch;
     align-items: center;
-    background-color: #d9005a;
+    background-color: #008888;
     box-shadow: 0 10px 2px 0 rgba(0, 0, 0, 0.16);
     overflow: auto;
 }
@@ -41,20 +41,22 @@
 .box {
 
     border: 1px solid black;
-
+    padding-bottom: 10px;
     width: 120px;
-    height: 120px;
+    height: 140px;
     margin: 10px;
-    background-color: #FFF;
+    background-image: url("/src/Frame\ 2.png");
     background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 20%;
     border: none;
 
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
 
 }
 
-.card {}
 
 .mainbox {
     display: flex;
@@ -74,8 +76,8 @@
 .box:hover {
     animation: bounce-top 4s both;
     box-shadow: 2px 10px 0 rgba(0, 0, 0, 0.16);
-    background-color: rgb(255, 246, 168);
-
+    background-color: rgb(223, 213, 116);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
 
 }
@@ -84,11 +86,11 @@ img:hover {
 
 
 
-    border-radius: 0%;
+
     cursor: pointer;
 }
 
-img:active {}
+
 
 
 @keyframes bounce-top {
@@ -155,8 +157,8 @@ img:active {}
 
 .box p {
 
-    background-color: rgb(255, 253, 110);
-
+    background-color: rgba(255, 255, 255, 0.407);
+    text-align: center;
     font-family: "PKMN RBYGSC";
     font-size: 0.8em;
 
