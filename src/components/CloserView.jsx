@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import { pokemonTypes } from "./PokemonTypes";
 import styling from "./DetailView.module.css";
 import styles from "./styles.module.css";
 
@@ -10,9 +10,26 @@ export default function CloserView({ item }) {
 
   const [shiny, setShiny] = useState(false);
 
+  const [style, setStyle] = useState("");
+
   const showShiny = () => {
     setShiny(!shiny);
+    if (!shiny) {
+      setStyle(styling.shinybtnactive);
+    } else {
+      setStyle("");
+    }
   };
+
+  // function buildTypes(){
+
+  //   {item.types.map((item) => {
+  //     const [{ name, color }] = pokemonTypes.filter(
+  //       (item) => item.name === item.type.name
+  //     );
+  //     }
+  //     {item.types[0].type.name}
+  // }
 
   return (
     <section className={styling.closerview}>
@@ -20,7 +37,10 @@ export default function CloserView({ item }) {
         src={shiny ? item.sprites.front_shiny : item.sprites.front_default}
         className={styling.closerviewpokemon}
       />
-      <button onClick={() => showShiny()} className={styling.shinybtn}>
+      <button
+        onClick={() => showShiny()}
+        className={styling.shinybtn + " " + style}
+      >
         Show Shiny
       </button>
 
@@ -31,7 +51,7 @@ export default function CloserView({ item }) {
         </h1>
         <ul className={styling.datalist}>
           <li className={styling.datachar}>
-            Type: <p className={styling.answer}>{item.types[0].type.name}</p>
+            Type: <p className={styling.answer}></p>
           </li>
           <li className={styling.datachar}>
             {" "}
