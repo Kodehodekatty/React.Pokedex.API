@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { pokemonTypes } from "./PokemonTypes";
+import { typeColor } from "./PokemonTypes";
 import styling from "./DetailView.module.css";
 import styles from "./styles.module.css";
+import fire from "../images/pokemonTypes/fire.svg";
 
 export default function CloserView({ item }) {
   if (!item || item == {})
@@ -20,16 +21,6 @@ export default function CloserView({ item }) {
       setStyle("");
     }
   };
-
-  // function buildTypes(){
-
-  //   {item.types.map((item) => {
-  //     const [{ name, color }] = pokemonTypes.filter(
-  //       (item) => item.name === item.type.name
-  //     );
-  //     }
-  //     {item.types[0].type.name}
-  // }
 
   return (
     <section className={styling.closerview}>
@@ -51,8 +42,38 @@ export default function CloserView({ item }) {
         </h1>
         <ul className={styling.datalist}>
           <li className={styling.datachar}>
-            Type: <p className={styling.answer}></p>
+            Type:
+            {item.types.length === 1 ? (
+              <p
+                className={styling.typebox}
+                style={{
+                  backgroundColor: `${typeColor(item.types[0].type.name)}`,
+                }}
+              >
+                {item.types[0].type.name}
+              </p>
+            ) : (
+              <li className={styling.datachar}>
+                <p
+                  className={styling.typebox}
+                  style={{
+                    backgroundColor: `${typeColor(item.types[0].type.name)}`,
+                  }}
+                >
+                  {item.types[0].type.name}
+                </p>
+                <p
+                  className={styling.typebox}
+                  style={{
+                    backgroundColor: `${typeColor(item.types[1].type.name)}`,
+                  }}
+                >
+                  {item.types[1].type.name}
+                </p>
+              </li>
+            )}{" "}
           </li>
+
           <li className={styling.datachar}>
             {" "}
             Height: <p className={styling.answer}>{item.height}</p>
