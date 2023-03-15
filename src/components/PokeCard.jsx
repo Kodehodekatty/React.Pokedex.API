@@ -7,7 +7,7 @@ const PokeCard = ({ item, onClickHandler }) => {
   return (
     <div className={styles.box} onClick={onClickHandler}>
       <div className={styles.card}>
-        <p className={styles.number}>{item.id}</p>
+        <p className={styles.number}> #{item.id}</p>
         <img
           src={item.sprites.front_default}
           alt=""
