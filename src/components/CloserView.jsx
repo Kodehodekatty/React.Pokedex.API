@@ -2,11 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { typeColor } from "./PokemonTypes";
 import styling from "./DetailView.module.css";
-import styles from "./styles.module.css";
-import fire from "../images/pokemonTypes/fire.svg";
+import { usePokemon } from "../hooks/usePokemon";
 
-export default function CloserView({ item }) {
-  if (!item || item == {})
+export default function CloserView({ pokemonUrl }) {
+  const pokemon = usePokemon(pokemonUrl);
+
+  if (!pokemon || pokemon == {})
     return <section className={styling.closerview}></section>;
 
   const [shiny, setShiny] = useState(false);

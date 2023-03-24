@@ -1,18 +1,22 @@
 import styles from "./styles.module.css";
 import styling from "./DetailView.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePokemon } from "../hooks/usePokemon";
 import React from "react";
 
-const PokeCard = ({ item, onClickHandler }) => {
+const PokeCard = ({ pokemonUrl, onClickHandler }) => {
+  const pokemon = usePokemon(pokemonUrl);
+
+  if (!pokemon) return null;
   return (
-    <div className={styles.box} onClick={onClickHandler}>
+    <div className={styles.box}>
       <div className={styles.card}>
-        <p className={styles.number}> #{item.id}</p>
+        <p className={styles.number}> #{pokemon.id}</p>
         <img
-          src={item.sprites.front_default}
+          src={pokemon.sprites.front_default}
           alt=""
           className={styles.spriteImages}
-          onClick={() => setShow(show == item.id ? 0 : item.id)}
+          onclick={() => onClickHandler(pokemonUrl)}
         />
       </div>
     </div>

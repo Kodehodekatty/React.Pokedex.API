@@ -4,7 +4,6 @@ import "./App.css";
 import React from "react";
 import PokeCard from "./components/PokeCard";
 import CloserView from "./components/CloserView";
-import pokemonbackground from "../src/videoplayback.mp4";
 
 import styles from "./components/styles.module.css";
 
@@ -18,17 +17,10 @@ export default function App() {
   const [selectedPokemon, setSelectedPokemon] = useState();
 
   useEffect(() => {
-    async function getData() {
+    (async function getData() {
       let listOfPokemonUrls = await fetch(fetchUrl).then((res) => res.json());
-      setListPokemon(
-        await Promise.all(
-          listOfPokemonUrls.results.map((item) =>
-            fetch(item.url).then((res) => res.json())
-          )
-        )
-      );
-    }
-    getData();
+      setListPokemon(listOfPokemonUrls.results);
+    })();
   }, []);
 
   function onClick(item) {
@@ -43,10 +35,10 @@ export default function App() {
         {pokemonList.map((item, index) => {
           return (
             <PokeCard
-              item={item}
+              pokemonUrl={item.url}
               key={index}
               onClickHandler={() => {
-                onClick(item);
+                onClick(item.url);
               }}
             />
           );

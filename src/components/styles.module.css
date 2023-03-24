@@ -10,7 +10,9 @@
     flex-wrap: wrap;
     justify-content: stretch;
     align-items: center;
-    background-color: #008888;
+    background-image: url("../images/download.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     box-shadow: 0 10px 2px 0 rgba(0, 0, 0, 0.16);
     overflow: auto;
 }
