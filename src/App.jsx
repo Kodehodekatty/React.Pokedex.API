@@ -24,6 +24,7 @@ export default function App() {
   }, []);
 
   function onClick(item) {
+    console.log("pokem with " + item);
     setSelectedPokemon(item);
   }
 
@@ -37,14 +38,14 @@ export default function App() {
             <PokeCard
               pokemonUrl={item.url}
               key={index}
-              onClickHandler={() => {
-                onClick(item.url);
+              onClickHandler={(pokemonUrl) => {
+                onClick(pokemonUrl);
               }}
             />
           );
         })}
       </div>
-      <CloserView item={selectedPokemon} />
+      <CloserView pokemonUrl={selectedPokemon} />
     </div>
   );
 }

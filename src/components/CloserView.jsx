@@ -7,12 +7,14 @@ import { usePokemon } from "../hooks/usePokemon";
 export default function CloserView({ pokemonUrl }) {
   const pokemon = usePokemon(pokemonUrl);
 
-  if (!pokemon || pokemon == {})
-    return <section className={styling.closerview}></section>;
+  console.log("new url " + pokemonUrl);
 
   const [shiny, setShiny] = useState(false);
 
   const [style, setStyle] = useState("");
+
+  if (!pokemon || pokemon == {})
+    return <section className={styling.closerview}></section>;
 
   const showShiny = () => {
     setShiny(!shiny);
@@ -27,13 +29,15 @@ export default function CloserView({ pokemonUrl }) {
     <section className={styling.closerview}>
       <main className={styling.datawrapper}>
         <img
-          src={shiny ? item.sprites.front_shiny : item.sprites.front_default}
+          src={
+            shiny ? pokemon.sprites.front_shiny : pokemon.sprites.front_default
+          }
           className={styling.closerviewpokemon}
         />
         <div className={styling.databox}>
           {" "}
-          <p className={styling.itemIDtag}> ID: {item.id} </p>{" "}
-          <p className={styling.itemnametag}>{item.name} </p>
+          <p className={styling.itemIDtag}> ID: {pokemon.id} </p>{" "}
+          <p className={styling.itemnametag}>{pokemon.name} </p>
           <button
             onClick={() => showShiny()}
             className={styling.shinybtn + " " + style}
@@ -46,32 +50,36 @@ export default function CloserView({ pokemonUrl }) {
             {" "}
             <h1> Type</h1>
             <section className={styling.typeframe}>
-              {item.types.length === 1 ? (
+              {pokemon.types.length === 1 ? (
                 <p
                   className={styling.typebox}
                   style={{
-                    backgroundColor: `${typeColor(item.types[0].type.name)}`,
+                    backgroundColor: `${typeColor(pokemon.types[0].type.name)}`,
                   }}
                 >
-                  {item.types[0].type.name}
+                  {pokemon.types[0].type.name}
                 </p>
               ) : (
                 <li className={styling.datachar}>
                   <p
                     className={styling.typebox}
                     style={{
-                      backgroundColor: `${typeColor(item.types[0].type.name)}`,
+                      backgroundColor: `${typeColor(
+                        pokemon.types[0].type.name
+                      )}`,
                     }}
                   >
-                    {item.types[0].type.name}
+                    {pokemon.types[0].type.name}
                   </p>
                   <p
                     className={styling.typebox}
                     style={{
-                      backgroundColor: `${typeColor(item.types[1].type.name)}`,
+                      backgroundColor: `${typeColor(
+                        pokemon.types[1].type.name
+                      )}`,
                     }}
                   >
-                    {item.types[1].type.name}
+                    {pokemon.types[1].type.name}
                   </p>
                 </li>
               )}{" "}
@@ -80,11 +88,11 @@ export default function CloserView({ pokemonUrl }) {
 
           <li className={styling.datachar}>
             {" "}
-            <h1>Height</h1> <p className={styling.answer}>{item.height}</p>
+            <h1>Height</h1> <p className={styling.answer}>{pokemon.height}</p>
           </li>
           <li className={styling.datachar}>
             {" "}
-            <h1> Weight</h1> <p className={styling.answer}>{item.weight}</p>
+            <h1> Weight</h1> <p className={styling.answer}>{pokemon.weight}</p>
           </li>
         </ul>
       </main>

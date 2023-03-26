@@ -16,7 +16,10 @@ const PokeCard = ({ pokemonUrl, onClickHandler }) => {
           src={pokemon.sprites.front_default}
           alt=""
           className={styles.spriteImages}
-          onclick={() => onClickHandler(pokemonUrl)}
+          onClick={() => {
+            console.log("i was cicked with " + pokemonUrl);
+            onClickHandler(pokemonUrl);
+          }}
         />
       </div>
     </div>
