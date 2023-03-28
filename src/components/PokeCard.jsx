@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import styling from "./DetailView.module.css";
+
 import { useState, useEffect } from "react";
 import { usePokemon } from "../hooks/usePokemon";
 import React from "react";

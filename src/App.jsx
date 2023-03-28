@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import "./App.css";
 import React from "react";
 import PokeCard from "./components/PokeCard";
-import CloserView from "./components/CloserView";
+import CloserView from "./components/CloserView/CloserView";
 
 import styles from "./components/styles.module.css";
 

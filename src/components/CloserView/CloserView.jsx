@@ -1,16 +1,15 @@
 import React from "react";
-import { useState } from "react";
-import { typeColor } from "./PokemonTypes";
+import { useState, useEffect } from "react";
+import { typeColor } from "../PokemonTypes";
 import styling from "./DetailView.module.css";
-import { usePokemon } from "../hooks/usePokemon";
+import { usePokemon } from "../../hooks/usePokemon";
+import usePokemonFlavorText from "./hooks/usePokemonFlavorText";
 
 export default function CloserView({ pokemonUrl }) {
   const pokemon = usePokemon(pokemonUrl);
-
-  console.log("new url " + pokemonUrl);
+  const flavorTexts = usePokemonFlavorText(pokemon);
 
   const [shiny, setShiny] = useState(false);
-
   const [style, setStyle] = useState("");
 
   if (!pokemon || pokemon == {})
@@ -18,11 +17,8 @@ export default function CloserView({ pokemonUrl }) {
 
   const showShiny = () => {
     setShiny(!shiny);
-    if (!shiny) {
-      setStyle(styling.shinybtnactive);
-    } else {
-      setStyle("");
-    }
+    if (!shiny) return setStyle(styling.shinybtnactive);
+    setStyle("");
   };
 
   return (
@@ -49,8 +45,17 @@ export default function CloserView({ pokemonUrl }) {
           <li className={styling.datachar}>
             {" "}
             <h1> Type</h1>
-            <section className={styling.typeframe}>
-              {pokemon.types.length === 1 ? (
+            {pokemon.types.length === 1 ? (
+              <p
+                className={styling.typebox}
+                style={{
+                  backgroundColor: `${typeColor(pokemon.types[0].type.name)}`,
+                }}
+              >
+                {pokemon.types[0].type.name}
+              </p>
+            ) : (
+              <li className={styling.datachar}>
                 <p
                   className={styling.typebox}
                   style={{
@@ -59,31 +64,16 @@ export default function CloserView({ pokemonUrl }) {
                 >
                   {pokemon.types[0].type.name}
                 </p>
-              ) : (
-                <li className={styling.datachar}>
-                  <p
-                    className={styling.typebox}
-                    style={{
-                      backgroundColor: `${typeColor(
-                        pokemon.types[0].type.name
-                      )}`,
-                    }}
-                  >
-                    {pokemon.types[0].type.name}
-                  </p>
-                  <p
-                    className={styling.typebox}
-                    style={{
-                      backgroundColor: `${typeColor(
-                        pokemon.types[1].type.name
-                      )}`,
-                    }}
-                  >
-                    {pokemon.types[1].type.name}
-                  </p>
-                </li>
-              )}{" "}
-            </section>
+                <p
+                  className={styling.typebox}
+                  style={{
+                    backgroundColor: `${typeColor(pokemon.types[1].type.name)}`,
+                  }}
+                >
+                  {pokemon.types[1].type.name}
+                </p>
+              </li>
+            )}{" "}
           </li>
 
           <li className={styling.datachar}>
@@ -93,6 +83,11 @@ export default function CloserView({ pokemonUrl }) {
           <li className={styling.datachar}>
             {" "}
             <h1> Weight</h1> <p className={styling.answer}>{pokemon.weight}</p>
+          </li>
+          <li className={styling.datadisc}>
+            {" "}
+            <h1> description</h1>
+            <p>{flavorTexts[0]?.flavor_text}</p>{" "}
           </li>
         </ul>
       </main>
