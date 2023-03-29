@@ -5,6 +5,12 @@ import styling from "./DetailView.module.css";
 import { usePokemon } from "../../hooks/usePokemon";
 import usePokemonFlavorText from "./hooks/usePokemonFlavorText";
 
+import fire from "../../images/AI/fire.png";
+import poison from "../../images/AI/poison.png";
+import lightning from "../../images/AI/thunder.png";
+import ice from "../../images/AI/ice.png";
+import water from "../../images/AI/water.png";
+
 export default function CloserView({ pokemonUrl }) {
   const pokemon = usePokemon(pokemonUrl);
   const flavorTexts = usePokemonFlavorText(pokemon);
@@ -21,6 +27,8 @@ export default function CloserView({ pokemonUrl }) {
     setStyle("");
   };
 
+  const backgrounds = [fire, poison, lightning, ice, water];
+
   return (
     <section className={styling.closerview}>
       <main className={styling.datawrapper}>
@@ -29,6 +37,9 @@ export default function CloserView({ pokemonUrl }) {
             shiny ? pokemon.sprites.front_shiny : pokemon.sprites.front_default
           }
           className={styling.closerviewpokemon}
+          // style={{
+          //   backgroundImage: `${backgrounds.find(pokemon.types[0].type.name)}`,
+          // }}
         />
         <div className={styling.databox}>
           {" "}
@@ -55,7 +66,7 @@ export default function CloserView({ pokemonUrl }) {
                 {pokemon.types[0].type.name}
               </p>
             ) : (
-              <li className={styling.datachar}>
+              <li className={styling.datatypebox}>
                 <p
                   className={styling.typebox}
                   style={{
@@ -75,20 +86,25 @@ export default function CloserView({ pokemonUrl }) {
               </li>
             )}{" "}
           </li>
-
+          <li className={styling.datachar}>
+            <h1>Ability</h1>{" "}
+            {pokemon?.abilities.map((item) => {
+              return <p className={styling.abilities}>{item.ability?.name}</p>;
+            })}{" "}
+          </li>
           <li className={styling.datachar}>
             {" "}
             <h1>Height</h1> <p className={styling.answer}>{pokemon.height}</p>
           </li>
+
           <li className={styling.datachar}>
             {" "}
             <h1> Weight</h1> <p className={styling.answer}>{pokemon.weight}</p>
           </li>
-          <li className={styling.datadisc}>
+          <div className={styling.datadisc}>
             {" "}
-            <h1> description</h1>
             <p>{flavorTexts[0]?.flavor_text}</p>{" "}
-          </li>
+          </div>
         </ul>
       </main>
     </section>

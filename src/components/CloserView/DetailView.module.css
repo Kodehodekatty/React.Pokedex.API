@@ -15,9 +15,9 @@
 }
 
 .closerviewpokemon {
-    background-image: url("../../images/Pokemon-forest-by-BlazingIfrit-Fur-Affinity-dot-net.jpg");
+    /* background-image: url("../../images/Pokemon-forest-by-BlazingIfrit-Fur-Affinity-dot-net.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     cursor: none;
     border-radius: 30px;
     border: rgb(50, 47, 47) 3px solid;
@@ -50,22 +50,22 @@
 
 
 .databox {
-    color: white;
+    color: rgb(2, 2, 2);
     margin: 0 0 5px;
     width: 290px;
-    padding: .4rem;
+
     text-transform: capitalize;
-    background-image: url("../../images/aloladex_background_by_sn_lolz_dbn3qmh-fullview.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
     border-radius: 20px;
-    height: max(50px);
+    height: max(40px);
     text-align: center;
     font-family: "PKMN RBYGSC";
     font-size: 1rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    background-image: url("../../images/graphic.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     border-top: 2px solid rgba(44, 40, 40, 0.815);
@@ -76,20 +76,21 @@
 .databox>p {
     margin: .2rem auto;
     padding-top: .5rem;
+    font-size: 12px;
 
 
 }
 
 .itemnametag {
-    grid-area: 2/ 2 / 2 / 5;
+    grid-area: 3/ 5 / 1 / 7;
 
 
 }
 
 .itemIDtag {
-    grid-area: 2 / 1 / 2 / 1;
-
-    padding: 10%;
+    grid-area: 1 / 6 / 2 / 1;
+    width: 80%;
+    padding: 5%;
 
 }
 
@@ -100,10 +101,10 @@
 .datachar {
     font-size: 0.7em;
     font-weight: 300;
-    text-align: left;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
+
     margin: 0;
 
 
@@ -113,24 +114,25 @@
 
 .shinybtn {
 
-    margin: 0 auto;
-    background: #13cf97;
+    margin: 5px 10px auto;
+    background: #f5ff3d;
     appearance: none;
-    padding: .20rem;
-    font-size: 0.6em;
-    width: 5rem;
-    height: 2rem;
-    grid-area: 2 / 5 / 5 / 5;
+
+
+    font-size: 0.5em;
+    width: 3.5rem;
+
+    grid-area: 1 / 2 / 2 / 1;
     box-sizing: border-box;
     border-radius: 0.6rem;
     font-family: "PKMN RBYGSC";
-    color: rgb(255, 254, 238);
+
     border: none;
     font-weight: bold;
     cursor: pointer;
     transition: all .1s ease;
     text-transform: uppercase;
-    border: .2rem solid rgb(5, 150, 116);
+    border: .2rem solid rgb(255, 255, 255);
 }
 
 .shinybtnactive {
@@ -157,17 +159,27 @@
     list-style-type: none;
     margin: 0;
     width: min(90%);
-    height: min(10rem);
+    height: min(12rem);
     padding: 1.3rem;
-
-    background-color: white;
+    background-image: url("../../images/aloladex_background_by_sn_lolz_dbn3qmh-fullview.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
     border-radius: 20px;
-    border-top: 2px solid rgba(56, 52, 52, 0.815);
+    border-top: 2px solid rgba(56, 52, 52, 0.652);
     display: grid;
-    grid-template-columns: 60px 7rem 3rem;
-    grid-template-rows: repeat(4, min(50px));
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: 40% 100px;
     justify-items: center;
+    border-bottom: 2px solid rgba(94, 91, 91, 0.815);
+}
+
+.datatypebox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+
 
 }
 
@@ -175,34 +187,40 @@
 .datatype {
     margin: 0 auto;
     position: relative;
-
     font-size: .5rem;
     font-family: "PKMN RBYGSC";
     text-align: center;
-    grid-column: 1/1;
-    display: grid;
+
+
 
 }
 
 .datadisc {
     margin: 0;
     position: relative;
-
     font-size: .5rem;
     font-family: "PKMN RBYGSC";
-    grid-column: 3/3;
+    grid-column: 2/2;
     grid-row: 2/2;
-    padding-right: 50px;
+
 
 
 
 }
 
 .datadisc p {
-    width: 200px;
+    width: 270px;
     height: 100px;
-    line-height: 16px;
-    overflow-y: scroll;
+    line-height: 14px;
+    background-color: rgba(209, 205, 205, 0.688);
+    box-shadow: rgba(8, 110, 62, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 20px;
+    padding: .5rem;
+    text-indent: 10px;
+    line-height: 20px;
+    border-top: 2px solid rgba(44, 40, 40, 0.815);
+    text-align: center;
+    margin: 3% 7%;
 
 }
 
@@ -211,7 +229,7 @@
     margin: 0;
     text-transform: capitalize;
     font-weight: 600;
-
+    width: max(78px);
 
 
 }
@@ -220,7 +238,8 @@
     margin: 0;
     position: relative;
     height: 1.3rem;
-
+    color: white;
+    text-shadow: 0 1.5px 1.9px black;
     font-size: .7rem;
     font-family: "PKMN RBYGSC";
 
@@ -228,20 +247,34 @@
 
 }
 
-.datadisc h1 {
-    margin: 0;
-    height: 15px;
-    top: -5px;
-    position: relative;
-    padding-left: 20px;
-}
-
 
 .answer {
-    font-weight: 600;
-    margin: 0;
 
+    margin: 3% 20% 0;
+    border-bottom: 1px solid rgba(150, 255, 160, 0.933);
+    border-radius: 15px;
+    width: 20px;
+    border-width: 3px;
+    color: white;
+    font-size: .8rem;
+    text-align: center;
+    text-shadow: 0 1.5px 2.8px black;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.abilities {
+    margin: 3% 0;
+    padding-top: 5px;
+    border-radius: 15px;
+    width: fit-content;
+    border-width: 4px;
+    color: rgb(255, 242, 0);
+    font-size: .8rem;
+
+    text-shadow: 0 2.5px 2.8px black;
+    font-family: sans-serif;
+}
+
 
 .typebox {
 
@@ -249,12 +282,12 @@
     padding: 10px;
 
     border-radius: 20px;
-    font-size: 1rem;
-    width: 50px;
+    font-size: .8rem;
+    width: max(40px);
     text-align: center;
     color: white;
     padding: .3rem;
-
+    margin: 0;
     position: relative;
 
 }

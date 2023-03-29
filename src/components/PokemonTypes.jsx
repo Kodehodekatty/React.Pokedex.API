@@ -1,5 +1,3 @@
-import fire from "../images/pokemonTypes/fire.svg";
-
 export const typeColor = (name) => {
   switch (name) {
     case "fire":
